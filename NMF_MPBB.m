@@ -1,6 +1,6 @@
 function [W,H,iter,elapse,HIS]=NMF_MPBB(V,r,varargin)
 
-% An efficient monotone projected Barzilai¨CBorwein method for nonnegative matrix factorization
+% An efficient monotone projected BarzilaiÂ¨CBorwein method for nonnegative matrix factorization
 %
 % This code solves the following problems: given V and r, find W and H such that
 %     minimize 1/2 * || V-WH ||_F^2 subject to W>=0 and H>=0. 
@@ -9,6 +9,8 @@ function [W,H,iter,elapse,HIS]=NMF_MPBB(V,r,varargin)
 % method for nonnegative matrix factorization", Applied Mathematics Letters, 45: 12-17, 2015.
 %
 % Written by Yakui Huang (huangyakui2006@gmail.com)
+
+% This code applies to V (m x n) with m > n. If m <=n, applies it to V^T is faster. 
 
 
 % <Inputs>
